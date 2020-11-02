@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <View style={styles.container}>
 
-        <Text style={styles.textStyle}>
+        <Text style={styles.textStyle} onPress={this.onClickFunction}>
           Welcome To My Class
         </Text>
 
