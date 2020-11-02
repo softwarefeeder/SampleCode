@@ -12,45 +12,50 @@ import {
   View,
   Text
 } from 'react-native';
-import { bold } from 'ansi-colors';
+import TextInputSampleClass1 from './TextInputSample1';
+import TextInputSampleClass2 from './TextInputSample2';
 
 
 class App extends Component {
+
+  onClickFunction() {
+    alert("welcome to my class!!!")
+  }
+
   render() {
     return (
-      <View style={styles.textStyle}>
-          <Text>
-            Hi
+      <View style={styles.container}>
+
+        <Text style={styles.textStyle}>
+          Welcome To My Class
         </Text>
+
+      <TextInputSampleClass1/>
+
+      <TextInputSampleClass2/>
+
       </View>
     );
   }
+
 }
 
 
 const styles = StyleSheet.create({
-  viewBackground:
-  {
+  container: {
     flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
   },
-  viewBackground1:
-  {
-    backgroundColor: "red",
-    flex: 0.5,
-    alignContent:"center",
-    
+  textStyle: {
+    margin: 50,
+    fontSize: 30,
+    color: "green"
   },
-  viewBackground2:
-  {
-    backgroundColor: "green",
-    flex: 0.5
-  },
-  textStyle:
-  {
-    flex: 1,
-    fontSize: 40,
-    alignContent:"center",
-    justifyContent:"center"
+  textInputStyle: {
+    padding: 10,
+    fontSize: 20,
+    color: "gray"
   },
 });
 
