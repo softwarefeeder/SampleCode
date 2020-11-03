@@ -10,30 +10,35 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  TouchableOpacity
 } from 'react-native';
 import TextInputSampleClass1 from './TextInputSample1';
 import TextInputSampleClass2 from './TextInputSample2';
+import TextSample2 from './TextSample2';
+import ButtonSample from './ButtonSample';
+import ImageSample from './ImageSample';
+import ImageBackgroundSample from './ImageBackground';
+import ActivityIndicatiorSample from './ActivityIndicatorSample';
 
 
 class App extends Component {
 
-  onClickFunction() {
-    alert("welcome to my class!!!")
+  onClick = () => {
+    alert("test");
   }
 
   render() {
     return (
       <View style={styles.container}>
-
-        <Text style={styles.textStyle} onPress={this.onClickFunction}>
+        <Text style={styles.textStyle} onPress={this.onClick}>
           Welcome To My Class
         </Text>
-
-      <TextInputSampleClass1/>
-
-      <TextInputSampleClass2/>
-
+        <ActivityIndicatiorSample />
+        <ImageBackgroundSample />
+        <TextInputSampleClass1 />
+        <TextSample2 />
+        <ButtonSample />
       </View>
     );
   }
@@ -45,11 +50,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    margin: 20
   },
   textStyle: {
     margin: 50,
-    fontSize: 30,
+    fontSize: 20,
     color: "green"
   },
   textInputStyle: {

@@ -10,20 +10,16 @@ import React from 'react';
 import {
     StyleSheet,
     View,
-    TextInput
+    Text
 } from 'react-native';
 
 
-const onChange = () => {
-
-}
-
-
-const TextInputSampleClass1 = () => {
+const TextSample = () => {
     return (
         <View style={styles.container}>
-            <TextInput placeholder={"Please enter your name :"} placeholderTextColor={"gray"} style={styles.textStyle} onChangeText={onChange}>
-            </TextInput>
+            <Text style={styles.textStyle} onPress={() => { alert("TextSample alert") }} >
+                click me!!!
+            </Text>
         </View>
     );
 }
@@ -43,4 +39,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TextInputSampleClass1;
+export default TextSample;

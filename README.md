@@ -11,7 +11,7 @@ ESLint Setup and Overview
 ESLint Setup with VSCode/Sublime Text 3/Atom -->
 #App Basics 
 
-#1-Nov-2020
+#2-Nov-2020
 
 <!-- 
 How to run the application in android & IOS 
@@ -35,11 +35,11 @@ Making onPress Alert
 TextInput Creation
 TextInput with styling 
 TextInput With onChangeText
-Making onPress Alert
+Making onPress Alert -->
 
 ---------------------------------
-
-
+#3-Nov-2020
+<!-- 
 TouchableHighlight Creation (1 child ~ Component)
 TouchableHighlight with styling 
 TouchableHighlight With onPress
@@ -60,6 +60,38 @@ TouchableWithoutFeedback Creation (1 child ~ Component)
 TouchableWithoutFeedback with styling 
 TouchableWithoutFeedback With onPress
 Making onPress Alert
+
+
+---------------------------------
+
+
+Image Creation (Wrapping the uri data )
+Image with styling 
+Image With onPress
+Making onPress Alert
+
+
+---------------------------------
+
+ImageBackground Creation (Wrapping the uri data )
+ImageBackground with styling 
+ImageBackground With onPress
+ImageBackground onPress Alert
+
+
+---------------------------------
+
+Button Creation 
+Button with styling 
+Button With onPress
+Making onPress Alert
+
+
+
+---------------------------------
+
+ActivityIndicator Creation 
+ActivityIndicator with styling 
 
 
  -->
