@@ -1,12 +1,17 @@
 
 
-import { ImageBackground, StyleSheet, } from "react-native"
+import { ImageBackground, StyleSheet, View } from "react-native"
 import React from 'react';
 
 const ImageBackgroundSample = () => {
     return (
-        <ImageBackground style={styles.imageBackgroundStyle} source={{ uri: "https://www.softwarefeeder.com/img/profileicon.png" }}>
-        </ImageBackground>
+        <View>
+            <ImageBackground style={styles.imageBackgroundStyle} source={{ uri: "https://www.softwarefeeder.com/img/profileicon.png" }} >
+            </ImageBackground>
+
+            {/* <ImageBackground style={styles.imageBackgroundStyle} source={require("")}>
+            </ImageBackground> */}
+        </View>
     );
 }
 

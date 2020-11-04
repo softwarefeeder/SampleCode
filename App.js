@@ -18,8 +18,10 @@ import TextInputSampleClass2 from './TextInputSample2';
 import TextSample2 from './TextSample2';
 import ButtonSample from './ButtonSample';
 import ImageSample from './ImageSample';
-import ImageBackgroundSample from './ImageBackground';
 import ActivityIndicatiorSample from './ActivityIndicatorSample';
+import FlatListSample from './FlatListSample';
+import ImageBackgroundSample from './ImageBackground';
+
 
 
 class App extends Component {
@@ -34,11 +36,13 @@ class App extends Component {
         <Text style={styles.textStyle} onPress={this.onClick}>
           Welcome To My Class
         </Text>
+        <FlatListSample />
         <ActivityIndicatiorSample />
-        <ImageBackgroundSample />
         <TextInputSampleClass1 />
         <TextSample2 />
         <ButtonSample />
+        {/* <ImageBackgroundSample /> */}
+
       </View>
     );
   }
