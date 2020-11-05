@@ -13,7 +13,7 @@ const buttonOnPress = () => {
 const ButtonSample = () => {
     return (
         <TouchableOpacity onPress={buttonOnPress}>
-            <Button title="Submit" style={styles.buttonStyle} >
+            <Button title="Submit Your Document in PDF" style={styles.buttonStyle} >
             </Button >
         </TouchableOpacity>
     );

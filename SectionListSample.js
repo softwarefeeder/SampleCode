@@ -5,7 +5,8 @@ import {
     View,
     Text,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    SectionList
 } from 'react-native';
 
 
@@ -14,14 +15,19 @@ const SampleData = [
         id: "1",
         title: "Sample Code 1",
         descrisption: "descrisption data 1",
-        imagedata: "https://www.softwarefeeder.com/img/profileicon.png"
+        imagedata: "https://www.softwarefeeder.com/img/profileicon.png",
+        sectionData: ["https://www.softwarefeeder.com/img/profileicon.png",
+            "https://www.softwarefeeder.com/img/profileicon.png",
+            "https://www.softwarefeeder.com/img/profileicon.png",
+            "https://www.softwarefeeder.com/img/profileicon.png"]
 
     },
     {
         id: "2",
         title: "Sample Code 2",
         descrisption: "descrisption data 2",
-        imagedata: "https://www.softwarefeeder.com/img/profileicon.png"
+        imagedata: "https://www.softwarefeeder.com/img/profileicon.png",
+        sectionData: ["French Fries", "Onion Rings", "Fried Shrimps"]
     },
     {
         id: "3",
@@ -106,11 +112,10 @@ const Item = ({ item }) => (
         <Text style={styles.textDescStyle}>{item.descrisption}</Text>
         <Image style={styles.imageStyle} source={{ uri: item.imagedata }} >
         </Image>
-
     </View>
 );
 
-const FlatListSample = () => {
+const SectionListSample = () => {
 
     const renderItem = ({ item }) => (
         <TouchableOpacity onPress={() => { alert(item.descrisption) }}>
@@ -119,13 +124,24 @@ const FlatListSample = () => {
 
     );
 
+    const emptyItem = () => {
+        <Text>
+        </Text>
+    };
+    const headerComponent = () => {
+        <Text>
+        </Text>
+    };
+
+    const SampleEmptyArray =
+        [];
+
+
     return (
-        <FlatList
-         numColumns={"2"} 
-         data={SampleData}
-         keyExtractor={item => item.id}
-         renderItem={renderItem}>
-        </FlatList>
+        <SectionList
+            data={SampleData}
+        >
+        </SectionList>
     )
 
 }
@@ -154,4 +170,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default FlatListSample;
+export default SectionListSample;

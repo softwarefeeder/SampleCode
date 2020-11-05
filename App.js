@@ -12,7 +12,9 @@ import {
   View,
   Text,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform
 } from 'react-native';
 import TextInputSampleClass1 from './TextInputSample1';
 import TextInputSampleClass2 from './TextInputSample2';
@@ -23,6 +25,7 @@ import ActivityIndicatiorSample from './ActivityIndicatorSample';
 import FlatListSample from './FlatListSample';
 import ImageBackgroundSample from './ImageBackground';
 import PraticeOne from './PraticeOne';
+import { platform } from 'os';
 
 
 
@@ -38,12 +41,20 @@ class App extends Component {
         <Text style={styles.textStyle} onPress={this.onClick}>
           Welcome To My Class
         </Text>
-        <PraticeOne />
-        <FlatListSample />
+          <FlatListSample />
+          <PraticeOne />
           <ActivityIndicatiorSample />
           <TextInputSampleClass1 />
           <TextSample2 />
-          <ButtonSample /> 
+          <ButtonSample />
+          <PraticeOne />
+          <ActivityIndicatiorSample />
+          <TextInputSampleClass1 />
+          <KeyboardAvoidingView behavior={Platform.os==="android"? 'height' :"padding"}>
+
+          <TextSample2 />
+          </KeyboardAvoidingView>
+          <ButtonSample />
         {/* <ImageBackgroundSample /> */}
       </View>
     );
