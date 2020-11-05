@@ -4,7 +4,8 @@ import {
     FlatList,
     View,
     Text,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 
 
@@ -39,23 +40,32 @@ const SampleData = [
 ];
 
 
+const onClickListener = (title) => {
+    alert(title)
+}
+
+
 const Item = ({ item }) => (
     <View style={styles.container}>
         <Text style={styles.textStyle}>{item.title}</Text>
         <Text style={styles.textDescStyle}>{item.descrisption}</Text>
         <Image style={styles.imageStyle} source={{ uri: item.imagedata }} >
         </Image>
+
     </View>
 );
 
 const FlatListSample = () => {
 
     const renderItem = ({ item }) => (
-        <Item item={item} />
+        <TouchableOpacity onPress={() => { alert(item.descrisption) }}>
+            <Item item={item} />
+        </TouchableOpacity>
+
     );
 
     return (
-        <FlatList horizontal data={SampleData} keyExtractor={item => item.id} renderItem={renderItem}>
+        <FlatList horizontal={false} data={SampleData} keyExtractor={item => item.id} renderItem={renderItem}>
         </FlatList>
     )
 
