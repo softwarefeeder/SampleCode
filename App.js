@@ -41,8 +41,8 @@ class App extends Component {
         <Text style={styles.textStyle} onPress={this.onClick}>
           Welcome To My Class
         </Text>
-          <FlatListSample />
-          <PraticeOne />
+        <FlatListSample />
+        {/* <PraticeOne />
           <ActivityIndicatiorSample />
           <TextInputSampleClass1 />
           <TextSample2 />
@@ -54,8 +54,8 @@ class App extends Component {
 
           <TextSample2 />
           </KeyboardAvoidingView>
-          <ButtonSample />
-        {/* <ImageBackgroundSample /> */}
+          <ButtonSample />  
+         <ImageBackgroundSample /> */}
       </View>
     );
   }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     StyleSheet,
     FlatList,
@@ -8,6 +8,8 @@ import {
     TouchableOpacity
 } from 'react-native';
 
+
+const baseApi = "https://softwarefeeder.com/screendesign.json"
 
 const SampleData = [
     {
@@ -95,37 +97,52 @@ const SampleData = [
 ];
 
 
-const onClickListener = (title) => {
-    alert(title)
-}
-
-
-const Item = ({ item }) => (
-    <View style={styles.container}>
-        <Text style={styles.textStyle}>{item.title}</Text>
-        <Text style={styles.textDescStyle}>{item.descrisption}</Text>
-        <Image style={styles.imageStyle} source={{ uri: item.imagedata }} >
-        </Image>
-
-    </View>
-);
 
 const FlatListSample = () => {
+    //Loading function
+    const [isLoading, setLoaderFunc] = useState(true);
+
+    //Api response 
+    const [data, setResponse] = useState([]);
+
+
+
+    useEffect(() => {
+
+        fetch(baseApi).
+            then((response) => response.json()).
+            then((json) => setResponse(json)).
+            catch((error) => console.error(error)).
+            finally(() => setLoaderFunc(false));
+
+
+    }, []);
+
+
+    const Item = ({ item }) => (
+        <View style={styles.container}>
+            <Text style={styles.textStyle}>{item.text}</Text>
+            <Image style={styles.imageStyle} source={{ uri: item.source }} >
+            </Image>
+
+        </View>
+    );
 
     const renderItem = ({ item }) => (
-        <TouchableOpacity onPress={() => { alert(item.descrisption) }}>
+        <TouchableOpacity onPress={() => { alert(item.text) }}>
             <Item item={item} />
         </TouchableOpacity>
 
     );
 
     return (
-        <FlatList
-         numColumns={"2"} 
-         data={SampleData}
-         keyExtractor={item => item.id}
-         renderItem={renderItem}>
-        </FlatList>
+        isLoading ?
+            <FlatList
+                numColumns={"2"}
+                data={data}
+                keyExtractor={item => item.id}
+                renderItem={renderItem}>
+            </FlatList> : <Text>No data</Text>
     )
 
 }
@@ -138,8 +155,8 @@ const styles = StyleSheet.create({
     },
     imageStyle: {
         padding: 10,
-        width: 50,
-        height: 50
+        width: 100,
+        height: 100
     },
     textStyle: {
         padding: 10,
